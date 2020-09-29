@@ -1,0 +1,614 @@
+openapi: 3.0.1
+info:
+  title: defaultTitle
+  description: defaultDescription
+  version: "0.1"
+servers:
+- url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+paths:
+  /v6/coldchain/vaccinebox/shipment:
+    post:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxShipmentPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body'
+            examples:
+              "0":
+                value: |-
+                  {
+                      "vaccineName": "Covax-19",
+                      "sku": "55",
+                      "quantity": "100",
+                      "destinationAddress": "4020 McKinney Ave Ste 502, Dallas, TX 75204-2426, US",
+                      "policyId": "P-55",
+                      "insurer": "ZURICH"
+                  }
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+              examples:
+                "0":
+                  value: '{"vaccineName":"Covax-19","sku":"55","quantity":"100","destinationAddress":"4020
+                    McKinney Ave Ste 502, Dallas, TX 75204-2426, US","manufacturer":"Pfizer","currentRole":"Manufacturer","status":"In-Transit","riskRating":0,"policyId":"P-55","insurer":"ZURICH","event":[{"eventOwner":"Pfizer","eventRole":"Manufacturer","eventType":"SHIPPING","eventDesc":"Left
+                    Facility","sensorCondition":"Active, normal readings","eventDate":"2020-09-24T10:06:10+0000"}]}'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/vaccinebox/shipment/99:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxShipment99GET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+              examples:
+                "0":
+                  value: '{"vaccineName":"Covax-19","sku":"55","quantity":"100","destinationAddress":"4020
+                    McKinney Ave Ste 502, Dallas, TX 75204-2426, US","riskRating":0,"manufacturer":"Pfizer","status":"In-Transit","policyId":"P-55","insurer":"ZURICH","claimId":"NC","claimStatus":"NA","claimRequestDate":"NA","currentOwner":"DHL-LTD","currentRole":"Logistics","events":[{"eventType":"SHIPMENT_RECEIVED","eventDesc":"Received","eventOwner":"DHL-LTD","eventRole":"Logistics","sensorCondition":"Active,
+                    normal readings","eventDate":"2020-09-24T10:09:38+0000","nextRole":"NA"},{"eventType":"SHIPMENT_DELIVERED","eventDesc":"Pending
+                    Confirmation","eventOwner":"Pfizer","eventRole":"Manufacturer","sensorCondition":"Active,
+                    normal readings","eventDate":"2020-09-24T10:08:04+0000","nextRole":"Logistics"},{"eventOwner":"Pfizer","eventRole":"Manufacturer","eventType":"SHIPPING","eventDesc":"Left
+                    Facility","sensorCondition":"Active, normal readings","eventDate":"2020-09-24T10:06:10+0000"}]}'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/vaccinebox/sensorData:
+    put:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxSensorDataPUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_1'
+            examples:
+              "0":
+                value: "\t\t{\n\t\t\t\"sku\" : \"55\",\t\t\t\n\t\t\t\"deviceId\":\
+                  \ \"SSE012300FBE3\",\n\t\t\t\"eventInfo\": {\n\t\t\t\"humidity\"\
+                  : 45,\n\t\t\t\"temp\": -3,\t\t    \n\t\t\t\"latitude\": \"29.7604°\
+                  \ N\",\t\t\t\n\t\t\t\"longitude\": \"95.3698° W\",\n\t\t\t\"location\"\
+                  : \"TX\"                                   \n\t\t\t}  \t\t\t\n\t\
+                  \t}"
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_2'
+              examples:
+                "0":
+                  value: '{"sku":"55","deviceId":"SSE012300FBE3","response":"SENSOR_REPORT"}'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/vaccinebox/claimRequest:
+    post:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxClaimRequestPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_2'
+            examples:
+              "0":
+                value: "\t\t{\n\t\t\t\"shipmentId\": \"55\",\n\t\t\t\"policyId\":\
+                  \ \"P-55\"\n\t\t}"
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_3'
+              examples:
+                "0":
+                  value: '{"ShipmentId":"55","ClaimId":"CLM-P-55","response":"New
+                    claim request initiated"}'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/insurance/claim/shipmentData:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainInsuranceClaimShipmentDataGET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+                example: {}
+                x-content-type: application/json
+              examples:
+                "0":
+                  value: '[{"ShipmentID":"10002","ClaimID":"NC","ClaimRequestDate":"NA","ClaimStatus":"NA","Manufacturer":"Gilead
+                    Sciences","Vaccine":"Covax-19","Qty":"300","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Logistics"},{"ShipmentID":"66","PolicyId":"P-55","ClaimID":"NC","ClaimRequestDate":"NA","ClaimStatus":"NA","Manufacturer":"Pfizer","Vaccine":"Covax-19","Qty":"100","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"10001","ClaimID":"INS-10005-2020","ClaimRequestDate":"2020-09-23T06:13:47+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Gilead Sciences","Vaccine":"Covax-19","Qty":"600","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Logistics"},{"ShipmentID":"20004","PolicyId":"PLY-20004","ClaimID":"CLM-PLY-30004","ClaimRequestDate":"2020-09-24T09:39:36+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Gilead Sciences","Vaccine":"Covax-19","Qty":"120","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"20001","PolicyId":"PLY-20001","ClaimID":"CLM-PLY-20001","ClaimRequestDate":"2020-09-23T12:43:29+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Gilead Sciences","Vaccine":"Covax-19","Qty":"120","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"10007","ClaimID":"NC","ClaimRequestDate":"NA","ClaimStatus":"NA","Manufacturer":"Gilead
+                    Sciences","Vaccine":"Covax-19","Qty":"120","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"10005","ClaimID":"INS-10005-2020","ClaimRequestDate":"2020-09-23T06:13:59+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Gilead Sciences","Vaccine":"Covax-19","Qty":"80","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"10008","ClaimID":"INS-10008-2020","ClaimRequestDate":"2020-09-23T06:40:01+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Gilead Sciences","Vaccine":"Covax-19","Qty":"120","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Logistics"},{"ShipmentID":"10004","ClaimID":"NC","ClaimRequestDate":"NA","ClaimStatus":"NA","Manufacturer":"Gilead
+                    Sciences","Vaccine":"Covax-19","Qty":"100","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"20002","PolicyId":"PLY-20001","ClaimID":"CLM-PLY-20002","ClaimRequestDate":"2020-09-23T12:48:13+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Gilead Sciences","Vaccine":"Covax-19","Qty":"120","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"10003","ClaimID":"INS-10005-2020","ClaimRequestDate":"2020-09-23T06:13:54+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Gilead Sciences","Vaccine":"Covax-19","Qty":"400","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"20003","PolicyId":"PLY-20001","ClaimID":"NC","ClaimRequestDate":"NA","ClaimStatus":"NA","Manufacturer":"Gilead
+                    Sciences","Vaccine":"Covax-19","Qty":"120","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"55","PolicyId":"P-55","ClaimID":"CLM-P-55","ClaimRequestDate":"2020-09-24T10:36:16+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Pfizer","Vaccine":"Covax-19","Qty":"100","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Logistics"},{"ShipmentID":"30004","PolicyId":"PLY-20004","ClaimID":"CLM-PLY-30004","ClaimRequestDate":"2020-09-24T09:39:22+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Gilead Sciences","Vaccine":"Covax-19","Qty":"120","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"10006","ClaimID":"NC","ClaimRequestDate":"NA","ClaimStatus":"NA","Manufacturer":"Gilead
+                    Sciences","Vaccine":"Covax-19","Qty":"80","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Manufacturer"},{"ShipmentID":"40004","PolicyId":"PLY-44","ClaimID":"CLM-PLY-40004","ClaimRequestDate":"2020-09-24T10:02:43+0000","ClaimStatus":"New
+                    claim request","Manufacturer":"Pfizer","Vaccine":"Covax-19","Qty":"120","Status":"In-Transit","RiskRate":0,"CurrentLocation":"Logistics"}]'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/vaccinebox/history/sensorData/99:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxHistorySensorData99GET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+                example: {}
+                x-content-type: application/json
+              examples:
+                "0":
+                  value: '[{"DateTime":"2020-09-24T10:44:48.254Z","SensorID":"SSE012300FBE3","temp":-11,"humidity":46,"longitude":"95.3698°
+                    W","latitude":"29.7604° N","location":"CA","CurrentOwner":"Logistics"},{"DateTime":"2020-09-24T10:13:49.968Z","SensorID":"SSE012300FBE3","temp":-3,"humidity":45,"longitude":"95.3698°
+                    W","latitude":"29.7604° N","location":"TX","CurrentOwner":"Logistics"}]'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/vaccinebox/report/auditTrail/99:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxReportAuditTrail99GET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+                example: {}
+                x-content-type: application/json
+              examples:
+                "0":
+                  value: '[{"events":[{"humidity":45,"temp":-3,"latitude":"29.7604°
+                    N","longitude":"95.3698° W","location":"TX","eventType":"SENSOR_REPORT","eventDesc":"Active,
+                    normal readings","eventDate":"2020-09-24T10:13:49+0000"},{"eventType":"SHIPMENT_RECEIVED","eventDesc":"Received","eventOwner":"DHL-LTD","eventRole":"Logistics","sensorCondition":"Active,
+                    normal readings","eventDate":"2020-09-24T10:09:38+0000","nextRole":"NA"},{"eventType":"SHIPMENT_DELIVERED","eventDesc":"Pending
+                    Confirmation","eventOwner":"Pfizer","eventRole":"Manufacturer","sensorCondition":"Active,
+                    normal readings","eventDate":"2020-09-24T10:08:04+0000","nextRole":"Logistics"},{"eventOwner":"Pfizer","eventRole":"Manufacturer","eventType":"SHIPPING","eventDesc":"Left
+                    Facility","sensorCondition":"Active, normal readings","eventDate":"2020-09-24T10:06:10+0000"}]}]'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/vaccinebox/deliver/shipment:
+    put:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxDeliverShipmentPUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_3'
+            examples:
+              "0":
+                value: "\t\t{\n\t\t\t\"sku\" : \"55\",\t\t\n            \"currentOwner\"\
+                  \ :\"Pfizer\",\t\n\t\t\t\"currentRole\": \"Manufacturer\",\n\t\t\
+                  \t\"nextRole\": \"Logistics\",\n\t\t\t\t\"eventInfo\": {\n\t\t\t\
+                  \t\"eventType\": \"SHIPMENT_DELIVERED\",\n\t\t\t\t\"eventDesc\"\
+                  : \"Pending Confirmation\"\t\t\t\n\t\t\t}  \t\t\t\n\t\t}"
+      responses:
+        "201":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_201'
+              examples:
+                "0":
+                  value: '{"sku":"55","currentRole":"Manufacturer","nextRole":"Logistics","response":"Pending
+                    Confirmation"}'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/vaccinebox/shipmentByParty/Pfizer:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxShipmentByPartyPfizerGET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+                example: {}
+                x-content-type: application/json
+              examples:
+                "0":
+                  value: '[{"ShipmentID":"66","shippingDate":"2020-09-24T10:33:54+0000","PolicID":"P-55","Vaccine":"Covax-19","Qty":"100","Status":"In-Transit","ClaimID":"NC"},{"ShipmentID":"55","PolicID":"P-55","Vaccine":"Covax-19","Qty":"100","Status":"In-Transit","ClaimID":"CLM-P-55"},{"ShipmentID":"40004","PolicID":"PLY-44","Vaccine":"Covax-19","Qty":"120","Status":"In-Transit","ClaimID":"CLM-PLY-40004"}]'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/vaccinebox/events/shipmentMovements/99:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxEventsShipmentMovements99GET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+                example: {}
+                x-content-type: application/json
+              examples:
+                "0":
+                  value: '[{"ShipmentID":"55","Status":"In-Transit","manufacturer":"Pfizer","VaccineName":"Covax-19","CurrentOwner":"Logistics","events":[{"humidity":46,"temp":-11,"latitude":"29.7604°
+                    N","longitude":"95.3698° W","location":"CA","eventType":"SENSOR_REPORT","eventDesc":"Active,
+                    normal readings","eventDate":"2020-09-24T10:44:47+0000"},{"humidity":45,"temp":-3,"latitude":"29.7604°
+                    N","longitude":"95.3698° W","location":"TX","eventType":"SENSOR_REPORT","eventDesc":"Active,
+                    normal readings","eventDate":"2020-09-24T10:13:49+0000"},{"eventType":"SHIPMENT_RECEIVED","eventDesc":"Received","eventOwner":"DHL-LTD","eventRole":"Logistics","sensorCondition":"Active,
+                    normal readings","eventDate":"2020-09-24T10:09:38+0000","nextRole":"NA"},{"eventType":"SHIPMENT_DELIVERED","eventDesc":"Pending
+                    Confirmation","eventOwner":"Pfizer","eventRole":"Manufacturer","sensorCondition":"Active,
+                    normal readings","eventDate":"2020-09-24T10:08:04+0000","nextRole":"Logistics"},{"eventOwner":"Pfizer","eventRole":"Manufacturer","eventType":"SHIPPING","eventDesc":"Left
+                    Facility","sensorCondition":"Active, normal readings","eventDate":"2020-09-24T10:06:10+0000"}]}]'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+  /v6/coldchain/vaccinebox/receive/shipment:
+    put:
+      description: Auto generated using Swagger Inspector
+      operationId: v6ColdchainVaccineboxReceiveShipmentPUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_4'
+            examples:
+              "0":
+                value: "\t\t{\n\t\t\t\"sku\" : \"55\",\n            \"currentOwner\"\
+                  \ :\"DHL-LTD\",           \t\t\t\n\t\t\t\"currentRole\": \"Logistics\"\
+                  ,\n\t\t\t\"nextRole\": \"NA\",\n\t\t\t\t\"eventInfo\": {\n\t\t\t\
+                  \t\"eventType\": \"SHIPMENT_RECEIVED\",\n\t\t\t\t\"eventDesc\":\
+                  \ \"Received\"\t\t\t\n\t\t\t}  \t\t\t\n\t\t}"
+      responses:
+        "201":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_201'
+              examples:
+                "0":
+                  value: '{"sku":"55","currentRole":"Logistics","nextRole":"NA","response":"Received"}'
+      servers:
+      - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+      x-swagger-router-controller: Default
+    servers:
+    - url: https://cnlo78m2j3.execute-api.us-east-1.amazonaws.com
+components:
+  schemas:
+    body:
+      type: object
+      properties:
+        vaccineName:
+          type: string
+        quantity:
+          type: string
+        destinationAddress:
+          type: string
+        policyId:
+          type: string
+        insurer:
+          type: string
+        sku:
+          type: string
+    inline_response_200:
+      type: object
+      properties:
+        vaccineName:
+          type: string
+        quantity:
+          type: string
+        destinationAddress:
+          type: string
+        policyId:
+          type: string
+        insurer:
+          type: string
+        currentRole:
+          type: string
+        sku:
+          type: string
+        event:
+          type: array
+          items:
+            type: object
+            properties:
+              eventDesc:
+                type: string
+              eventOwner:
+                type: string
+              sensorCondition:
+                type: string
+              eventType:
+                type: string
+              eventRole:
+                type: string
+              eventDate:
+                type: string
+            example:
+              eventDesc: eventDesc
+              eventOwner: eventOwner
+              sensorCondition: sensorCondition
+              eventType: eventType
+              eventRole: eventRole
+              eventDate: eventDate
+        riskRating:
+          type: integer
+        manufacturer:
+          type: string
+        status:
+          type: string
+      example:
+        vaccineName: vaccineName
+        quantity: quantity
+        destinationAddress: destinationAddress
+        policyId: policyId
+        insurer: insurer
+        currentRole: currentRole
+        sku: sku
+        event:
+        - eventDesc: eventDesc
+          eventOwner: eventOwner
+          sensorCondition: sensorCondition
+          eventType: eventType
+          eventRole: eventRole
+          eventDate: eventDate
+        - eventDesc: eventDesc
+          eventOwner: eventOwner
+          sensorCondition: sensorCondition
+          eventType: eventType
+          eventRole: eventRole
+          eventDate: eventDate
+        riskRating: 0
+        manufacturer: manufacturer
+        status: status
+    inline_response_200_1:
+      type: object
+      properties:
+        vaccineName:
+          type: string
+        quantity:
+          type: string
+        destinationAddress:
+          type: string
+        claimId:
+          type: string
+        riskRating:
+          type: integer
+        manufacturer:
+          type: string
+        claimRequestDate:
+          type: string
+        policyId:
+          type: string
+        insurer:
+          type: string
+        currentOwner:
+          type: string
+        currentRole:
+          type: string
+        sku:
+          type: string
+        claimStatus:
+          type: string
+        events:
+          type: array
+          items:
+            type: object
+            properties:
+              eventDesc:
+                type: string
+              eventOwner:
+                type: string
+              sensorCondition:
+                type: string
+              eventType:
+                type: string
+              nextRole:
+                type: string
+              eventRole:
+                type: string
+              eventDate:
+                type: string
+            example:
+              eventDesc: eventDesc
+              eventOwner: eventOwner
+              sensorCondition: sensorCondition
+              eventType: eventType
+              nextRole: nextRole
+              eventRole: eventRole
+              eventDate: eventDate
+        status:
+          type: string
+      example:
+        vaccineName: vaccineName
+        quantity: quantity
+        destinationAddress: destinationAddress
+        claimId: claimId
+        riskRating: 0
+        manufacturer: manufacturer
+        claimRequestDate: claimRequestDate
+        policyId: policyId
+        insurer: insurer
+        currentOwner: currentOwner
+        currentRole: currentRole
+        sku: sku
+        claimStatus: claimStatus
+        events:
+        - eventDesc: eventDesc
+          eventOwner: eventOwner
+          sensorCondition: sensorCondition
+          eventType: eventType
+          nextRole: nextRole
+          eventRole: eventRole
+          eventDate: eventDate
+        - eventDesc: eventDesc
+          eventOwner: eventOwner
+          sensorCondition: sensorCondition
+          eventType: eventType
+          nextRole: nextRole
+          eventRole: eventRole
+          eventDate: eventDate
+        status: status
+    v6coldchainvaccineboxsensorData_eventInfo:
+      type: object
+      properties:
+        temp:
+          type: integer
+        latitude:
+          type: string
+        humidity:
+          type: integer
+        location:
+          type: string
+        longitude:
+          type: string
+    body_1:
+      type: object
+      properties:
+        eventInfo:
+          $ref: '#/components/schemas/v6coldchainvaccineboxsensorData_eventInfo'
+        sku:
+          type: string
+        deviceId:
+          type: string
+    inline_response_200_2:
+      type: object
+      properties:
+        response:
+          type: string
+        sku:
+          type: string
+        deviceId:
+          type: string
+      example:
+        response: response
+        sku: sku
+        deviceId: deviceId
+    body_2:
+      type: object
+      properties:
+        policyId:
+          type: string
+        shipmentId:
+          type: string
+    inline_response_200_3:
+      type: object
+      properties:
+        ShipmentId:
+          type: string
+        ClaimId:
+          type: string
+        response:
+          type: string
+      example:
+        ShipmentId: ShipmentId
+        ClaimId: ClaimId
+        response: response
+    v6coldchainvaccineboxdelivershipment_eventInfo:
+      type: object
+      properties:
+        eventDesc:
+          type: string
+        eventType:
+          type: string
+    body_3:
+      type: object
+      properties:
+        eventInfo:
+          $ref: '#/components/schemas/v6coldchainvaccineboxdelivershipment_eventInfo'
+        currentOwner:
+          type: string
+        currentRole:
+          type: string
+        sku:
+          type: string
+        nextRole:
+          type: string
+    inline_response_201:
+      type: object
+      properties:
+        response:
+          type: string
+        currentRole:
+          type: string
+        sku:
+          type: string
+        nextRole:
+          type: string
+      example:
+        response: response
+        currentRole: currentRole
+        sku: sku
+        nextRole: nextRole
+    body_4:
+      type: object
+      properties:
+        eventInfo:
+          $ref: '#/components/schemas/v6coldchainvaccineboxdelivershipment_eventInfo'
+        currentOwner:
+          type: string
+        currentRole:
+          type: string
+        sku:
+          type: string
+        nextRole:
+          type: string
