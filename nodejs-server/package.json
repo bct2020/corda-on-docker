@@ -1,11 +1,11 @@
 {
   "name": "defaulttitle",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "defaultDescription",
   "main": "index.js",
   "scripts": {
-	"prestart": "npm install",
-	"start": "node index.js"
+    "prestart": "npm install",
+    "start": "node index.js"
   },
   "keywords": [
     "swagger"
