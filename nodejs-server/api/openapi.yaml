@@ -1,18 +1,18 @@
-openapi: 3.0.1
+﻿openapi: 3.0.1
 info:
-  title: defaultTitle
-  description: defaultDescription
+  title: Coldchain-Beta
+  description: Coldchain-Beta
   version: 0.2.0
 servers:
 - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
 paths:
   /v10/coldchain/vaccinebox/shipment/S-07:
     get:
-      description: Auto generated using Swagger Inspector
+      description: This API retreives the details of a specified shipment. Use shipmentId as path parameter to retreice shipment details. 
       operationId: v10ColdchainVaccineboxShipmentS_07GET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Retreive shipment 
           content:
             application/json:
               schema:
@@ -31,11 +31,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/recentShipments:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API returns recent 5 shipments numbers.
       operationId: v10ColdchainVaccineboxRecentShipmentsGET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Recent 5 shipments
           content:
             application/json:
               schema:
@@ -53,11 +53,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/report/sensorDataAuditTrail/S-07:
     get:
-      description: Auto generated using Swagger Inspector
+      description: This API returns sensor data audit trail of a specified shipment.
       operationId: v10ColdchainVaccineboxReportSensorDataAuditTrailS_07GET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Sensor data trail
           content:
             application/json:
               schema:
@@ -75,7 +75,7 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/deliver/shipment:
     put:
-      description: Auto generated using Swagger Inspector
+      description: API used to deliver shipment to consignee
       operationId: v10ColdchainVaccineboxDeliverShipmentPUT
       requestBody:
         content:
@@ -92,7 +92,7 @@ paths:
                   \t}"
       responses:
         "201":
-          description: Auto generated using Swagger Inspector
+          description: Deliver shipment
           content:
             application/json:
               schema:
@@ -108,11 +108,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/shipmentByParty/Pfizer:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API returns a list shipment despatched from Manufacturers faciltiy. 
       operationId: v10ColdchainVaccineboxShipmentByPartyPfizerGET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Shipment despatched by manufacturer
           content:
             application/json:
               schema:
@@ -144,11 +144,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/shipment/graphInfo:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API used to retrieve geotag data(Current location).
       operationId: v10ColdchainShipmentGraphInfoGET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Retruns Latitude, Longitude, X-Axis, Y-Axis and Location
           content:
             application/json:
               schema:
@@ -174,11 +174,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/insurance/shipmentData:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API returns a list of shipments insured by the insurer.
       operationId: v10ColdchainInsuranceShipmentDataGET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Shipment insured list
           content:
             application/json:
               schema:
@@ -214,11 +214,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/shipmentCount:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API returns total number of shipments.
       operationId: v10ColdchainVaccineboxShipmentCountGET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Shipment count
           content:
             application/json:
               schema:
@@ -233,11 +233,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/notifyHighRiskShipments:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API retuns the number of shipments in Risk Category
       operationId: v10ColdchainVaccineboxNotifyHighRiskShipmentsGET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Highrisk shipment count
           content:
             application/json:
               schema:
@@ -252,11 +252,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/highRiskShipments:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API retuns a list of shipments in Risk Category
       operationId: v10ColdchainVaccineboxHighRiskShipmentsGET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Highrisk shipment list
           content:
             application/json:
               schema:
@@ -276,11 +276,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/events/shipmentMovements/S-07:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API to track shipment movements
       operationId: v10ColdchainVaccineboxEventsShipmentMovementsS_07GET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: API records shipment movements
           content:
             application/json:
               schema:
@@ -301,7 +301,7 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/claimRequest:
     post:
-      description: Auto generated using Swagger Inspector
+      description: API for submitting claim request
       operationId: v10ColdchainVaccineboxClaimRequestPOST
       requestBody:
         content:
@@ -314,7 +314,7 @@ paths:
                   : \"P-07\"\n\t\t}"
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: claim submission
           content:
             application/json:
               schema:
@@ -330,11 +330,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/claimCount:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API retruns the total number of claims submitted
       operationId: v10ColdchainVaccineboxClaimCountGET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Claims count
           content:
             application/json:
               schema:
@@ -349,11 +349,11 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/recentClaims:
     get:
-      description: Auto generated using Swagger Inspector
+      description: API returns latest 3 claims submitted
       operationId: v10ColdchainVaccineboxRecentClaimsGET
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Latest 3 claims submitted
           content:
             application/json:
               schema:
@@ -380,7 +380,7 @@ paths:
     - url: https://0s5mutp14j.execute-api.us-east-1.amazonaws.com
   /v10/coldchain/vaccinebox/shipment:
     post:
-      description: Auto generated using Swagger Inspector
+      description: API for creating shipment
       operationId: v10ColdchainVaccineboxShipmentPOST
       requestBody:
         content:
@@ -396,7 +396,7 @@ paths:
                   ,\n\t\t\t\t\"insuredValue\": 3200    \n\t\t\t}"
       responses:
         "200":
-          description: Auto generated using Swagger Inspector
+          description: Create shipment
           content:
             application/json:
               schema:
